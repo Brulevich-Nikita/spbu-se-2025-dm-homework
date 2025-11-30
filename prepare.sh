@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Компиляция решений на C
-for i in 1 2 3 4 5
+for i in 3
 do
     SRC="solutions/solution-0$i.c"
     OUT="solutions/solution-0$i"
