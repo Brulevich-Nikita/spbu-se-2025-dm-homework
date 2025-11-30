@@ -1,14 +1,14 @@
 #!/bin/bash
 
-# Скрипт подготовки решений перед тестированием
-# Компилирует все решения C и делает их исполняемыми
+# Компиляция решений на C
+for i in 1 2 3 4 5
+do
+    SRC="solutions/solution-0$i.c"
+    OUT="solutions/solution-0$i"
 
-for i in {1..5}; do
-    src="solutions/solution-0$i.c"
-    exe="solutions/solution-0$i"
-
-    if [ -f "$src" ]; then
-        gcc -o "$exe" "$src"
-        chmod +x "$exe"
+    if [ -f "$SRC" ]; then
+        echo "Compiling $SRC → $OUT"
+        gcc "$SRC" -O2 -std=c11 -o "$OUT"
+        chmod +x "$OUT"
     fi
 done
